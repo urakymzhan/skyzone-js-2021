@@ -120,3 +120,100 @@ for (var i = 0; i < 5; i++) {
   // 5. loop i = 4
   // 6. loop i = 5 => stop here
 }
+
+// use loops and if statements together
+console.log(`------`);
+for (var i = 0; i < 20; i++) {
+  // body of your loop
+  console.log(i);
+  if (i === 4) {
+    // body of your statement
+    break; // break the loop and exit it!
+  }
+}
+console.log(`------`);
+for (var i = 0; i < 10; i++) {
+  // body of your loop
+  if (i === 4) {
+    // body of your statement
+    continue; // break the loop and exit it!
+  }
+  console.log(i);
+}
+
+console.log(`------`);
+var day = 'sunday';
+for (var i = 0; i < day.length; i++) {
+  console.log(day[i]);
+  if (day[i] === 's') {
+    console.log('S is clicked');
+  }
+}
+
+// string
+// length = 6
+// index 0 - 5
+// s u n d a y
+// 0 1 2 3 4 5
+// console.log(day[0]);
+
+// Activity
+
+// 1.
+for (var i = 11; i < 44; i += 3) {
+  console.log('i: ', i);
+}
+
+// 2.
+// 9*1=9
+// 9*2=18 ...
+// var startingNum = 9;
+for (var i = 1; i <= 12; i++) {
+  console.log(9 + '*' + i + '=' + 9 * i);
+}
+
+// SWITCH STATEMENT -------------
+var day2 = 'onday';
+switch (day2) {
+  case 'monday': {
+    console.log('its monday');
+    break;
+  }
+  case 'tuesday': {
+    console.log('its a sunday');
+    break;
+  }
+  case 'sunday': {
+    console.log('its a sunday');
+    break;
+  }
+  default: {
+    console.log('wrong day provided');
+  }
+}
+var result;
+const operator = prompt('Enter operator (either +,-,* or /): ');
+const number1 = parseFloat(prompt('Enter first number: '));
+const number2 = parseFloat(prompt('Enter second number: '));
+
+switch (operator) {
+  case '+': {
+    console.log(number1 + number2);
+    break;
+  }
+  case '-': {
+    console.log(number1 - number2);
+    break;
+  }
+  case '*': {
+    console.log(number1 * number2);
+    break;
+  }
+  case '/': {
+    console.log(number1 / number2);
+    break;
+  }
+  default:
+    console.log('invalid operator!');
+    break;
+}
