@@ -87,5 +87,26 @@ var isClassStarted = true;
 // Research and read about:
 // - null
 // - undefined
-// - Symbol
 // We will discuss before the next class
+
+// both of them has no value
+// one of them has typeof
+
+// null -> nothing
+
+var nothing = null;
+
+// undefined -> declared but value is not defined
+var something;
+
+console.log(`nothing`, nothing);
+console.log(`something`, something);
+
+console.log(`type`, typeof nothing); // object
+console.log(`type`, typeof something); // undefined
+
+// compare null and undefined
+console.log(null == undefined); // compare loosely
+console.log(null === undefined); // object === undefined
+
+console.log(10 === '10'); // == loosly comparing
