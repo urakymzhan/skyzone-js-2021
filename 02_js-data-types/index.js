@@ -65,8 +65,93 @@ console.log(`arr2`, arr2);
 arr2.pop(); // remove last element from array
 console.log(`arr2`, arr2);
 
-var name = 'Ulan';
+// Activity Array
 
-name = 'Ryan';
+// array of fav bands
+// var favouritesBands = ['Metallica', 'Rolling Stone', 'Rammstein'];
+// // we have to ask user their fav band via prompt
+// var userInput = prompt('What is your favourites Bands');
+// // add users band to my favorite bands
+// favouritesBands[favouritesBands.length] = userInput;
+// // favouritesBands.push(userInput);
+// // console the whole array
+// for (var i = 0; i < favouritesBands.length; i++) {
+//   console.log(`bands`, favouritesBands[i]);
+// }
 
-console.log(`name`, name);
+// OBJECTS ------------------
+// var person = {};
+// var person = new Object();
+// key-pair
+
+// person.name = 'Ulan';
+// person.occupation = 'teacher';
+// person.gender = 'male';
+
+var person = {
+  name: 'Ulan',
+  gender: 'male',
+  occupation: null,
+};
+console.log(person);
+
+// Bracket Notation - objects
+console.log(person['name']);
+console.log(person['gender']);
+console.log(person['occupation']);
+
+// Dot Notation - objects
+console.log(person.name);
+console.log(person.gender);
+console.log(person.occupation);
+
+// add object props.
+person.weight = 170;
+console.log(person);
+
+// update object props.
+person.name = 'Rick';
+console.log(person);
+
+// delete object props.
+delete person.occupation;
+console.log(person);
+
+// array of Objects
+
+var gandalf = {
+  name: 'Gandlaf',
+  gender: 'male',
+  age: 11000,
+};
+
+var arrayOfObject = ['Text', 123, true, gandalf];
+
+// index
+console.log(arrayOfObject[3].name);
+
+// pop
+// var gandalf2 = arrayOfObject.pop(); // it takes last element
+// console.log(gandalf2.name);
+
+// loop - we assume there is only one object in array
+for (var i = 0; i < arrayOfObject.length; i++) {
+  if (typeof arrayOfObject[i] === 'object') {
+    console.log(arrayOfObject[i].name);
+  }
+}
+
+// Activity
+var user = {
+  name: 'John',
+  lastName: 'Doe',
+};
+user.name = 'Chris';
+delete user.lastName;
+user.interests = ['reading', 'singing', 'rugby'];
+console.log(`user.interests`, user.interests);
+// looping through array inside an object
+// console.log(`length`, user.length);
+for (let i = 0; i < user.interests.length; i++) {
+  console.log(user.interests[i]);
+}
