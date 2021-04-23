@@ -81,3 +81,93 @@ function myName(firstName, middleName, lastName) {
 }
 var fn = myName('Mary', 'Eliz', 'Smith');
 console.log(fn);
+
+// Activity
+// 1.
+function productOfFourNumbersReturn(a, b, c, d) {
+  var sum = a * b * c * d;
+  return sum;
+}
+// 2.
+function alertTheUserFullName(name, lastName) {
+  return 'Hello ' + name + ' ' + lastName;
+  // console.log('hey');
+}
+// alert(alertTheUserFullName('Ulan', 'Rakymzhan'));
+
+// Difference function declaration and function expression
+
+// dec(); - works
+function dec() {
+  console.log('this is dec function');
+}
+// exp(); - error
+var exp = function () {
+  console.log('this is exp function');
+};
+
+// Scopes
+// 1. Global
+
+var theString = 'The current Year Is '; // global variable
+var year = 2021; // global variable
+
+function curretYear() {
+  // function scope
+  console.log(theString + year); // can access global vars
+}
+curretYear();
+
+if (10 > 1) {
+  // block scope
+  console.log(year); // can access global vars
+}
+
+// 2. Local
+function lastYearFun() {
+  var str = 'The last Year Is '; // local variable
+  var lastyear = 2020; // local variable
+  console.log(str + lastyear); // can access local vars
+}
+lastYearFun();
+
+// console.log(str);
+// console.log(lastyear);
+
+var g = 'global';
+// global
+function outer() {
+  var o = 'outer';
+  // g, o
+  console.log(`g`, g);
+  console.log(`o`, o);
+  // console.log(`i`, i);
+  function inner() {
+    var i = 'inner';
+    // g, o, i
+    console.log(`g`, g);
+    console.log(`o`, o);
+    console.log(`i`, i);
+  }
+  inner();
+}
+outer();
+
+// Activity
+// 1. declaration
+var worldPopulation = 7900;
+function percentageOfWorld1(population) {
+  return (population / worldPopulation) * 100;
+}
+// 2. expression
+var percentageOfWorld2 = function (population) {
+  return (population / worldPopulation) * 100;
+};
+
+var china = percentageOfWorld1(1441);
+var england = percentageOfWorld1(350);
+var mexico = percentageOfWorld1(1200);
+
+console.log(`china percentage %`, china);
+console.log(`england percentage %`, england);
+console.log(`mexico percentage %`, mexico);
