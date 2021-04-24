@@ -236,3 +236,57 @@ const arr2 = ['a', 'b', 'c'];
 console.log(arr1.concat(arr2));
 console.log([...arr1, ...arr2]);
 // console.log(['ulan', ...arr2]);
+
+// Activity DRS
+const initalColors = ['white', 'black', 'gray'];
+const exoticColor = ['purple', 'orange', 'green'];
+
+const allColors = [...initalColors, ...exoticColor];
+const allColors2 = initalColors.concat(exoticColor);
+
+// Task 2
+function join(initalColors, exoticColor) {
+  // return initalColors.concat(exoticColor);
+  return [...initalColors, ...exoticColor];
+}
+
+// Task3
+function average(...unlimited) {
+  if (unlimited.length === 0) {
+    return 0;
+  }
+  let sum = 0;
+  for (let el of unlimited) {
+    sum += el;
+  }
+  return sum / unlimited.length;
+}
+
+console.log(average(2, 6));
+console.log(average(2, 3, 3, 5, 7, 10));
+console.log(average(7, 1432, 12, 13, 100));
+console.log(average());
+
+// Promise
+// creating a promise
+const promise = new Promise((resolve, reject) => {
+  var sum = 1 + 2;
+  if (sum === 3) {
+    // if sucessful resovle
+    // setTimeout(() => {
+    resolve('Yes it is true');
+    // }, 5000);
+  } else {
+    // if fails reject
+    // setTimeout(() => {
+    reject('Sorry its wrong');
+    // }, 3000);
+  }
+});
+
+// handling a promise
+promise
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => console.log(err));
