@@ -171,3 +171,28 @@ var mexico = percentageOfWorld1(1200);
 console.log(`china percentage %`, china);
 console.log(`england percentage %`, england);
 console.log(`mexico percentage %`, mexico);
+
+// IIFE - immediately invoked functions
+(function (a) {
+  console.log(`a`, a);
+  console.log('IIFE');
+})('hey');
+
+// functions as object properties
+var car = {
+  color: 'black',
+  type: 'sedan',
+  drive: function (dir) {
+    console.log('car is moving', dir);
+  },
+};
+car.drive('right');
+
+// functions as argument - callback
+function callMe(myFun) {
+  myFun();
+}
+function myFun() {
+  console.log('Call Me');
+}
+callMe(myFun);
