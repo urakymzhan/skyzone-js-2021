@@ -132,6 +132,43 @@ const user3 = {
 };
 
 const languages = ['JavaScript', 'Ruby', 'Python'];
-greet.call(user3, languages[0], languages[1], languages[2]); // this === user3
+// greet.call(user3, ...languages); // this === user3
+// greet.call(object, arguments)
+// apply
+// greet.apply(user3, languages); // same as call expect how we pass arguments
 
-// use strict
+// bind
+// same as call but only returns new function
+// you can use or call that function later times
+const newFn = greet.bind(user3, languages[0], languages[1], languages[2]);
+// newFn();
+
+// Lexical Binding
+const user4 = {
+  name: 'John',
+  greet: () => {
+    console.log(this.name);
+  },
+};
+
+user4.greet();
+
+// USE STRICT
+
+// window.age = 27;
+
+// function sayAge() {
+//   'use strict';
+//   console.log(`My age is ${this.age}`);
+// }
+
+// sayAge(); // TypeError: Cannot read property 'age' of undefined
+
+(function (a, a, b) {
+  console.log(a, b);
+})(1, 2, 3); // 2,3
+
+// (function (a, a, b) {
+//   'use strict';
+//   console.log(a, b);
+// })(1, 2, 3);
