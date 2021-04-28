@@ -67,18 +67,71 @@ obj.getVar();
 // Write a script to print the message “Hello World” every second, but only 5 times. After 5 times, the script should print 	the message “Done” and let the Node process exit.
 // Constraints: You cannot use a setTimeout call for this challenge.
 // Hint: You need a counter.
-let counter = 0;
-const intervalId = setInterval(() => {
-  console.log('Hello World');
-  counter += 1;
-  if (counter === 5) {
-    console.log('Done');
-    clearInterval(intervalId);
-  }
-}, 1000);
+// let counter = 0;
+// const intervalId = setInterval(() => {
+//   counter += 1;
+//   console.log('counter', counter);
+//   if (counter === 5) {
+//     console.log('Done');
+//     clearInterval(intervalId);
+//   }
+// }, 1000);
 
-// debugger
+// DEBUGGER -----------
+var a = 1;
+// debugger;
+var b = 10;
 
-// this, call, bind, apply
+// THIS, CALL, BIND, APPLY --------------------
+
+// global context
+console.log(this); // window
+
+// function greet(name) {
+//   alert(`Hello, my name is ${name}.`);
+// }
+// greet('Paul');
+
+// Implicit Binding ----
+const user = {
+  name: 'Tyler',
+  age: 27,
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  },
+};
+
+user.greet(); // this = user obejct
+
+const user2 = {
+  name: 'Tyler',
+  age: 27,
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  },
+  mother: {
+    name: 'Stacey',
+    greet() {
+      console.log(`Hello, my name is ${this.name}`);
+    },
+  },
+};
+
+user2.greet(); // this === user2 object
+user2.mother.greet(); // this === mother object
+
+// Explicit Binding ----
+function greet(l1, l2, l3) {
+  console.log(`Hello, my name is ${this.name}`);
+  console.log(`and i know ${l1} ${l2} ${l3}`);
+}
+
+const user3 = {
+  name: 'Ulan',
+  age: 27,
+};
+
+const languages = ['JavaScript', 'Ruby', 'Python'];
+greet.call(user3, languages[0], languages[1], languages[2]); // this === user3
 
 // use strict
