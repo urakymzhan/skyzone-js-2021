@@ -97,8 +97,9 @@ appleEl.setAttribute('alt', '4 apples');
 console.log(`source`, appleEl.getAttribute('src'));
 console.log(`alt`, appleEl.getAttribute('alt'));
 
-// Styling of DOM elements
-
+/**
+ * Styling of DOM elements
+ */
 const theBody = document.getElementsByTagName('body')[0];
 theBody.style.backgroundColor = 'lightgray';
 theBody.style.fontSize = '80%';
@@ -119,6 +120,7 @@ appleEl.className = 'newAppleClassName';
 console.log(appleEl.className);
 console.log(appleEl.classList);
 
+// add()
 appleEl.classList.add('red');
 
 console.log(appleEl.className);
@@ -126,19 +128,23 @@ console.log(appleEl.classList);
 console.log(appleEl.classList[0]);
 console.log(appleEl.classList[1]);
 
+// remove()
 appleEl.classList.remove('newAppleClassName');
 
 console.log(appleEl.className);
 console.log(appleEl.classList);
 
+// contains()
 console.log(appleEl.classList.contains('red'));
 console.log(appleEl.classList.contains('green'));
 
+// replace()
 appleEl.classList.replace('red', 'green');
 
 console.log(appleEl.className);
 console.log(appleEl.classList);
 
+// toggle()
 // toggle ex: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onclick_dropdown
 appleEl.classList.toggle('green'); // removed
 
@@ -185,5 +191,26 @@ footer.append(address);
 const theBody2 = document.getElementsByTagName('body')[0];
 const div123 = document.createElement('div');
 const newH1 = document.createElement('h1');
+const title1 = document.createElement('h1');
 newH1.textContent = 'hey this is H1';
-theBody2.appendChild(div123.appendChild(newH1));
+title1.textContent = 'Activity ------ ';
+div123.appendChild(title1);
+div123.appendChild(newH1);
+theBody2.appendChild(div123);
+
+// Events
+// addEventListener()
+
+const btnPrimary = document.getElementById('btn-primary');
+const btnSecondary = document.getElementById('btn-primary');
+
+// btnPrimary.addEventListener('click', () => {
+//   console.log('button is getting clicked!');
+// });
+
+const handleClick = () => {
+  console.log('event is activated!');
+};
+btnPrimary.addEventListener('click', handleClick);
+
+btnSecondary.removeEventListener('click', handleClick);
