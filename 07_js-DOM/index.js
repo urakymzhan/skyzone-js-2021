@@ -202,7 +202,7 @@ theBody2.appendChild(div123);
 // addEventListener()
 
 const btnPrimary = document.getElementById('btn-primary');
-const btnSecondary = document.getElementById('btn-primary');
+const btnSecondary = document.getElementById('btn-secondary');
 
 // btnPrimary.addEventListener('click', () => {
 //   console.log('button is getting clicked!');
@@ -211,6 +211,43 @@ const btnSecondary = document.getElementById('btn-primary');
 const handleClick = () => {
   console.log('event is activated!');
 };
-btnPrimary.addEventListener('click', handleClick);
 
-btnSecondary.removeEventListener('click', handleClick);
+btnPrimary.addEventListener('click', handleClick());
+
+btnSecondary.addEventListener('click', () => {
+  btnPrimary.removeEventListener('click', handleClick);
+});
+
+// preventDefault()
+const googleBtn = document.getElementById('google');
+googleBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  alert('Google is not available right now!');
+  console.log(event.target);
+});
+
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+
+// change event type
+// username.addEventListener('change', (event) => {
+//   console.log(event.target.value);
+// });
+
+// input event type
+username.addEventListener('input', (event) => {
+  console.log(event);
+});
+
+// Activity
+const btnChameleon = document.getElementById('btn-chameleon');
+btnChameleon.style.color = '#fff';
+btnChameleon.style.background = 'blue';
+// event mouseover
+btnChameleon.addEventListener('mouseover', () => {
+  btnChameleon.style.background = 'green';
+});
+// event mouseout
+btnChameleon.addEventListener('mouseout', () => {
+  btnChameleon.style.background = 'red';
+});
